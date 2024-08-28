@@ -1,4 +1,4 @@
-# React Chat Widget
+# React Chat Widget V2
 [![circle-ci](https://img.shields.io/circleci/project/github/Wolox/react-chat-widget.svg)](https://circleci.com/gh/Wolox/react-chat-widget)
 [![npm](https://img.shields.io/npm/v/react-chat-widget.svg)](https://www.npmjs.com/package/react-chat-widget)
 
@@ -289,6 +289,6 @@ function MyApp() {
 
 ## About
 
-This project is maintained by [Martín Callegari](https://github.com/mcallegari10) and it was written by [Wolox](http://www.wolox.com.ar).
+This project was forked from react-chat-widget, which is maintained by [Martín Callegari](https://github.com/mcallegari10) and was written by [Wolox](http://www.wolox.com.ar).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
