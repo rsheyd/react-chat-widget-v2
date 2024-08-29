@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { Picker } from 'emoji-mart';
+import Picker from '@emoji-mart/react';
 import cn from 'classnames';
 
 import Header from './components/Header';
