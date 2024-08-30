@@ -11,6 +11,7 @@ module.exports = {
   },
   target: 'web',
   devtool: 'inline-source-map',
+  ignoreWarnings: [/Failed to parse source map/],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     compress: false,
