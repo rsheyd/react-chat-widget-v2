@@ -126,6 +126,8 @@ function WidgetLayout({
         'rcw-close-widget-container ': !showChat
         })
       }
+      role="region"
+      aria-label="Widget Layout"
     >
       {showChat &&
         <Conversation
