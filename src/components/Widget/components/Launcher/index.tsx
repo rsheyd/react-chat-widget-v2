@@ -33,11 +33,11 @@ function Launcher({ toggle, chatId, openImg, closeImg, openLabel, closeLabel, sh
   }
 
   return (
-    <button type="button" className={cn('rcw-launcher', { 'rcw-hide-sm': showChat })} onClick={toggleChat} aria-controls={chatId}>
+    <button type="button" className={cn('rcw-launcher', { 'rcw-hide-sm': showChat })} onClick={toggleChat} aria-controls={chatId} aria-label="toggle chat">
       {!showChat && showBadge && <Badge badge={badgeCount} />}
       {showChat ?
-        <img src={closeImg || close} className="rcw-close-launcher" alt={openLabel} /> :
-        <img src={openImg || openLauncher} className="rcw-open-launcher" alt={closeLabel} />
+        <img src={closeImg || close} className="rcw-close-launcher" alt={closeLabel} /> :
+        <img src={openImg || openLauncher} className="rcw-open-launcher" alt={openLabel} />
       }
     </button>
   );

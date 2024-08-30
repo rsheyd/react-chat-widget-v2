@@ -1,23 +1,28 @@
-'use strict'
-
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  mode: 'development',
   entry: {
     main: path.resolve(__dirname, 'dev/main.tsx'),
     vendor: ['react', 'react-dom']
   },
   target: 'web',
-  mode: 'development',
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'dist'),
     compress: false,
     host: '0.0.0.0',
     port: 3000,
-    hot: true
+    hot: true,
+    client: {
+      overlay: {
+        warnings: false,
+        errors: true,
+      }
+    }
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
@@ -56,7 +61,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('node-sass'),
+              implementation: require('sass'),
               sassOptions: {
                 includePaths: [path.resolve(__dirname, 'src/scss/')]
               }
@@ -70,7 +75,6 @@ module.exports = {
       }
     ]
   },
-  devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({

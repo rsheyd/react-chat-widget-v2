@@ -147,7 +147,7 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
           {isEmpty && !disabledInput && placeholder}
         </div>
       </div>
-      <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
+      <button aria-label='send message' type="submit" className="rcw-send" onClick={handlerSendMessage}>
         <img src={send} className="rcw-send-icon" alt={buttonAlt} />
       </button>
     </div>

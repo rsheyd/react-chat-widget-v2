@@ -1,7 +1,6 @@
 @import 'common';
 @import 'variables/colors';
 @import 'animation';
-@import "~emoji-mart/css/emoji-mart.css";
 
 .rcw-conversation-container {
   border-radius: 10px;
@@ -32,10 +31,6 @@
   position: absolute;
   top: 0;
   width: 5px;
-}
-
-.emoji-mart-preview {
-  display: none;
 }
 
 .rcw-full-screen {
