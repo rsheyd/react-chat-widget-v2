@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import { useRef, useState, forwardRef, useImperativeHandle } from 'react';
 import { useSelector } from 'react-redux';
 import cn from 'classnames';
 
@@ -19,77 +19,74 @@ type Props = {
   onTextInputChange?: (event: any) => void;
 }
 
-function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
+function Sender({
+  sendMessage,
+  placeholder,
+  disabledInput,
+  autofocus,
+  onTextInputChange,
+  buttonAlt,
+  onPressEmoji,
+  onChangeSize
+}: Props, ref) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
-  const inputRef = useRef<HTMLTextAreaElement>(null!);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const refContainer = useRef<HTMLDivElement>(null);
-  const [text, setText] = useState('');
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => { 
-    if (showChat && autofocus) inputRef.current?.focus(); 
-  }, [showChat]);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   useImperativeHandle(ref, () => ({
     onSelectEmoji: handlerOnSelectEmoji,
   }));
 
   const handlerOnChange = (event) => {
-    const newText = event.target.value;
-    setText(newText);
-    onTextInputChange && onTextInputChange(newText);
-    checkSize();
+    onTextInputChange && onTextInputChange(event);
+    setIsEmpty(event.target.value === '');
   };
 
   const handlerSendMessage = () => {
-    if (text.trim()) {
-      sendMessage(text.trim());
-      setText(''); // Clear the textarea after sending the message
+    const el = inputRef.current;
+    if (el && el.value.trim()) {
+      sendMessage(el.value);
+      el.value = '';
+      setIsEmpty(true);
     }
   };
 
   const handlerOnSelectEmoji = (emoji) => {
-    setText((prevText) => prevText + emoji.native);
+    const el = inputRef.current;
+    if (el) {
+      const start = el.selectionStart;
+      const end = el.selectionEnd;
+      const text = el.value;
+      el.value = text.slice(0, start) + emoji.native + text.slice(end);
+      setIsEmpty(false);
+      el.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
+      el.focus();
+    }
   };
 
   const handlerOnKeyPress = (event) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    if (event.charCode === 13 && !event.shiftKey) {
       event.preventDefault();
       handlerSendMessage();
     }
   };
 
-  const checkSize = () => {
-    const senderEl = refContainer.current;
-    if (senderEl && height !== senderEl.clientHeight) {
-      const { clientHeight } = senderEl;
-      setHeight(clientHeight);
-      onChangeSize(clientHeight ? clientHeight - 1 : 0);
-    }
-  };
-
-  const handlerPressEmoji = () => {
-    onPressEmoji();
-    checkSize();
-  };
-
   return (
     <div ref={refContainer} className="rcw-sender">
-      <button className='rcw-picker-btn' type="submit" onClick={handlerPressEmoji}>
+      <button className='rcw-picker-btn' type="button" onClick={onPressEmoji}>
         <img src={emoji} className="rcw-picker-icon" alt="" />
       </button>
-      <div className={cn('rcw-new-message', { 'rcw-message-disable': disabledInput })}>
-        <textarea
-          className="rcw-input"
-          placeholder={placeholder}
-          disabled={disabledInput}
-          ref={inputRef}
-          value={text}
-          onChange={handlerOnChange}
-          onKeyPress={handlerOnKeyPress}
-        />
-      </div>
-      <button aria-label='send message' type="submit" className="rcw-send" onClick={handlerSendMessage}>
+      <textarea
+        ref={inputRef}
+        className={cn('rcw-new-message', { 'rcw-message-disable': disabledInput })}
+        placeholder={placeholder}
+        disabled={disabledInput}
+        autoFocus={autofocus}
+        onChange={handlerOnChange}
+        onKeyPress={handlerOnKeyPress}
+      />
+      <button aria-label='send message' type="button" className="rcw-send" onClick={handlerSendMessage}>
         <img src={send} className="rcw-send-icon" alt={buttonAlt} />
       </button>
     </div>
