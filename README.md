@@ -4,26 +4,22 @@
 
 [![FEArmy](./assets/FEA_open_source_sm.png)](https://github.com/orgs/Wolox/teams/front-end-army/members)
 
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+  * [Features](#features)
+  * [Installation](#installation)
+      - [npm](#npm)
+      - [yarn](#yarn)
+  * [Usage](#usage)
+  * [API](#api)
+      - [Props](#props)
+      - [Styles](#styles)
+      - [Messages](#messages)
+      - [Widget behavior](#widget-behavior)
+      - [Widget components](#widget-components)
+        * [Custom Launcher](#custom-launcher)
+  * [Contributing](#contributing)
+  * [About](#about)
 
-   * [Features](#features)
-   * [Installation](#installation)
-         - [npm](#npm)
-         - [yarn](#yarn)
-   * [Usage](#usage)
-   * [API](#api)
-         - [Props](#props)
-         - [Styles](#styles)
-         - [Messages](#messages)
-         - [Widget behavior](#widget-behavior)
-         - [Widget components](#widget-components)
-            * [Custom Launcher](#custom-launcher)
-   * [Contributing](#contributing)
-   * [About](#about)
-
-<!-- TOC end -->
-
-<!-- TOC --><a name="react-chat-widget-v2"></a>
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 <!-- TOC --><a name="features"></a>
 ## Features
