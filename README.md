@@ -328,4 +328,4 @@ There is a `/dev` directory containing a sample page with the widget. Running `n
 <!-- TOC --><a name="about"></a>
 ## About
 
-This project was forked from react-chat-widget, which is (was?) maintained by [Martín Callegari](https://github.com/mcallegari10) and was written by [Wolox](http://www.wolox.com.ar).
+This project was forked from [react-chat-widget](https://github.com/Wolox/react-chat-widget), which is (was?) maintained by [Martín Callegari](https://github.com/mcallegari10) and was written by [Wolox](http://www.wolox.com.ar).
