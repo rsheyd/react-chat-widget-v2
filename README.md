@@ -4,6 +4,28 @@
 
 [![FEArmy](./assets/FEA_open_source_sm.png)](https://github.com/orgs/Wolox/teams/front-end-army/members)
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+   * [Features](#features)
+   * [Installation](#installation)
+         - [npm](#npm)
+         - [yarn](#yarn)
+   * [Usage](#usage)
+   * [API](#api)
+         - [Props](#props)
+         - [Styles](#styles)
+         - [Messages](#messages)
+         - [Widget behavior](#widget-behavior)
+         - [Widget components](#widget-components)
+            * [Custom Launcher](#custom-launcher)
+   * [Contributing](#contributing)
+   * [About](#about)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="react-chat-widget-v2"></a>
+
+<!-- TOC --><a name="features"></a>
 ## Features
 
 - Plain text message UI
@@ -13,18 +35,22 @@
 
 ![demonstration](./assets/chat-demonstration.gif)
 
+<!-- TOC --><a name="installation"></a>
 ## Installation
 
+<!-- TOC --><a name="npm"></a>
 #### npm
 ```bash
 npm install --save react-chat-widget
 ```
 
+<!-- TOC --><a name="yarn"></a>
 #### yarn
 ```bash
 yarn add react-chat-widget
 ```
 
+<!-- TOC --><a name="usage"></a>
 ## Usage
 
 1- Add the Widget component to your root component
@@ -139,8 +165,10 @@ export default App;
 
 ```
 
+<!-- TOC --><a name="api"></a>
 ## API
 
+<!-- TOC --><a name="props"></a>
 #### Props
 
 |prop|type|required|default value|description|
@@ -171,6 +199,7 @@ export default App;
 |**emojis**|boolean|NO|false|enable emoji picker|
 |**showBadge**|boolean|NO|true|Prop that allows to show or hide the unread message badge|
 
+<!-- TOC --><a name="styles"></a>
 #### Styles
 
 To change the styles you need the widget to have, simply override the CSS classes wrapping them within the containers and add your own style to them! All classes are prefixed with `rcw-` so they don't override your other classes in case you are not hasing them. 
@@ -189,6 +218,7 @@ To override, you can do, for expample:
 
 That way, you can leave the JS clean and keep the styles within the CSS.
 
+<!-- TOC --><a name="messages"></a>
 #### Messages
 
 As of v3.0, messages now have an optional ID that can be added on creation.If you want to add new messages, you can use the following methods:
@@ -231,6 +261,7 @@ As of v3.0, messages now have an optional ID that can be added on creation.If yo
 
 **Markdown is supported for both the responses and user messages.**
 
+<!-- TOC --><a name="widget-behavior"></a>
 #### Widget behavior
 
 You can also control certain actions of the widget:
@@ -260,8 +291,10 @@ You can also control certain actions of the widget:
     - count: number
   - As of v3.0, the `badge` prop is being changed to be managed from within the Widget. This method is manually set the badge number.
 
+<!-- TOC --><a name="widget-components"></a>
 #### Widget components
 
+<!-- TOC --><a name="custom-launcher"></a>
 ##### Custom Launcher
 
 You can use a custom component for the Launcher if you need one that's not the default, simply use the **launcher** prop:
@@ -287,8 +320,12 @@ function MyApp() {
 
 `getCustomLauncher()` is a method that will return the `Launcher` component as seen in the example. By default, the function passed by that prop, will receive the `handleToggle` parameter which is the method that will toggle the widget.
 
+<!-- TOC --><a name="contributing"></a>
+## Contributing
+
+There is a `/dev` directory containing a sample page with the widget. Running `npm start` activates the dev webpack and runs the widget locally on `localhost:3000`. That way you can test changes made to the codebase locally.
+
+<!-- TOC --><a name="about"></a>
 ## About
 
-This project was forked from react-chat-widget, which is maintained by [Martín Callegari](https://github.com/mcallegari10) and was written by [Wolox](http://www.wolox.com.ar).
-
-![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
+This project was forked from react-chat-widget, which is (was?) maintained by [Martín Callegari](https://github.com/mcallegari10) and was written by [Wolox](http://www.wolox.com.ar).
