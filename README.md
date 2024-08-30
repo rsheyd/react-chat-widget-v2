@@ -2,9 +2,17 @@
 [![circle-ci](https://img.shields.io/circleci/project/github/Wolox/react-chat-widget.svg)](https://circleci.com/gh/Wolox/react-chat-widget)
 [![npm](https://img.shields.io/npm/v/react-chat-widget.svg)](https://www.npmjs.com/package/react-chat-widget)
 
-[![FEArmy](./assets/FEA_open_source_sm.png)](https://github.com/orgs/Wolox/teams/front-end-army/members)
+## Features
 
-  * [Features](#features)
+- Plain text message UI
+- Snippet style for links (only as responses for now)
+- Fully customizable
+- Easy to use
+
+![demonstration](./assets/chat-demonstration.gif)
+
+## Table of Contents
+
   * [Installation](#installation)
       - [npm](#npm)
       - [yarn](#yarn)
@@ -20,16 +28,6 @@
   * [About](#about)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-<!-- TOC --><a name="features"></a>
-## Features
-
-- Plain text message UI
-- Snippet style for links (only as responses for now)
-- Fully customizable
-- Easy to use
-
-![demonstration](./assets/chat-demonstration.gif)
 
 <!-- TOC --><a name="installation"></a>
 ## Installation
