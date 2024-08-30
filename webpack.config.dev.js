@@ -16,7 +16,6 @@ module.exports = {
     compress: false,
     host: '0.0.0.0',
     port: 3000,
-    hot: true,
     client: {
       overlay: {
         warnings: false,
