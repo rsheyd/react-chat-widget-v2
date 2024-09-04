@@ -317,6 +317,11 @@ function MyApp() {
 <!-- TOC --><a name="contributing"></a>
 ## Contributing
 
+  1. clone repo
+  1. `npm install` to install dependencies
+  1. `npm test` to run tests
+  1. `npm start` to run widget locally on localhost:3000
+
 There is a `/dev` directory containing a sample page with the widget. Running `npm start` activates the dev webpack and runs the widget locally on `localhost:3000`. That way you can test changes made to the codebase locally.
 
 <!-- TOC --><a name="about"></a>
