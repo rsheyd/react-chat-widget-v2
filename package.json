@@ -1,11 +1,18 @@
 {
-  "name": "react-chat-widget",
-  "version": "3.1.4",
-  "description": "Chat web widget for React apps",
+  "name": "react-chat-widget-v2",
+  "version": "3.1.5",
+  "description": "A chat widget for your React App",
   "main": "lib/index.js",
-  "repository": "git@github.com:Wolox/react-chat-widget.git",
-  "author": "Martín Callegari <martin.callegari@wolox.com.ar>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsheyd/react-chat-widget-v2.git"
+  },
+  "author": "Roman Sheydvasser",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsheyd/react-chat-widget-v2/issues"
+  },
+  "homepage": "https://github.com/rsheyd/react-chat-widget-v2#readme",
   "types": "./lib/index.d.ts",
   "scripts": {
     "start": "webpack serve --config webpack.config.dev.js",
